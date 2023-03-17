@@ -14,6 +14,7 @@
   }
   nav {
     display: flex;
+    cursor: pointer; /* poner imagen de cursor*/
     justify-content: space-between;
     padding: 0 24px;
     border-bottom: 1px solid var(--very-light-pink);
