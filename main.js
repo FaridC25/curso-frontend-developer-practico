@@ -3,7 +3,7 @@ const desktop_menu = document.querySelector('.desktop-menu');
 const mobile_menu = document.querySelector('.mobile-menu');
 const menu_hamburgesa = document.querySelector('.menu');
 const navbar_shopping_cart = document.querySelector('.navbar-shopping-cart');
-const product_detail = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cards_container = document.querySelector('.cards-container');
 
 navbar_email.addEventListener('click' , toggleshowDesktopMenu)
@@ -15,7 +15,7 @@ navbar_shopping_cart.addEventListener('click', toggleshowpshoppingcart)
 
 function toggleshowpshoppingcart(){
 
-   const carroinactivo =  product_detail.classList.toggle('inactive')
+   const carroinactivo =  shoppingCartContainer.classList.toggle('inactive')
    
 
    if( !carroinactivo ) {
@@ -35,7 +35,7 @@ function toggleshowpMobileMenu(){
 
     if(!hamburgesa_inactiva) {
 
-        product_detail.classList.add('inactive')
+        shoppingCartContainer.classList.add('inactive')
 
     }
 
@@ -47,7 +47,7 @@ function toggleshowDesktopMenu(){
 
     if( !menu_desktop) {
 
-        product_detail.classList.add('inactive')
+        shoppingCartContainer.classList.add('inactive')
           
     }
 }
