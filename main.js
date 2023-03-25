@@ -5,12 +5,19 @@ const menu_hamburgesa = document.querySelector('.menu');
 const navbar_shopping_cart = document.querySelector('.navbar-shopping-cart');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cards_container = document.querySelector('.cards-container');
+const ProductDetail = document.querySelector('#ProductDetail');
+const product_detail_close = document.querySelector('.product-detail-close');
 
 navbar_email.addEventListener('click' , toggleshowDesktopMenu)
 
 menu_hamburgesa.addEventListener('click', toggleshowpMobileMenu)
 
 navbar_shopping_cart.addEventListener('click', toggleshowpshoppingcart)
+
+product_detail_close.addEventListener('click',closeproductdetail)
+
+
+
 
 
 function toggleshowpshoppingcart(){
@@ -23,6 +30,9 @@ function toggleshowpshoppingcart(){
        mobile_menu.classList.add('inactive');
 
        desktop_menu.classList.add('inactive');
+       
+       ProductDetail.classList.add('inactive')
+
         
    }
    
@@ -37,6 +47,8 @@ function toggleshowpMobileMenu(){
 
         shoppingCartContainer.classList.add('inactive')
 
+        ProductDetail.classList.add('inactive')
+
     }
 
 }
@@ -48,8 +60,26 @@ function toggleshowDesktopMenu(){
     if( !menu_desktop) {
 
         shoppingCartContainer.classList.add('inactive')
+
+        ProductDetail.classList.add('inactive')
           
     }
+}
+
+function activate_product_detail(){
+
+    ProductDetail.classList.remove('inactive');
+    
+    desktop_menu.classList.add('inactive')
+
+    shoppingCartContainer.classList.add('inactive')
+
+}
+
+function closeproductdetail() {
+    
+    ProductDetail.classList.add('inactive')
+
 }
 
 
@@ -122,6 +152,8 @@ for ( product of array) {
     const product_figure = document.createElement('figure');
     const img_figure = document.createElement('img');
     img_figure.setAttribute('src','./icons/bt_add_to_cart.svg');
+    img_figure.classList.add('push-detail');
+
     product_figure.append(img_figure)
     
 
@@ -132,8 +164,11 @@ for ( product of array) {
     
     
     cards_container.append(product_card);
+    product_img.addEventListener('click', activate_product_detail);
   
 }
 };
+
+
 
 renderizar_productos(product_list);
